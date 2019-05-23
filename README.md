@@ -1,4 +1,4 @@
-# Instagram post web scraper
+# Expedia Flight Info Web Scraper (Work in Progress)
 
-Hey there! This is a python script created to test out scraping instagram post for the first time! 
+Hey there! First time trying to scrape information using a python script!
 
