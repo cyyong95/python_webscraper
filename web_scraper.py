@@ -2,6 +2,7 @@ import time
 import re
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.proxy import Proxy, ProxyType
 from fake_useragent import UserAgent
 from bs4 import BeautifulSoup
 
@@ -20,8 +21,23 @@ def launch_chrome():
     user_agent = ua.random
     options.add_argument(f'user-agent={user_agent}')
 
+    # Add proxy
+    proxy_add = "66.205.179.219:80"
+    proxy = Proxy()
+    proxy.http_proxy = proxy_add
+    proxy.ftp_proxy = proxy_add
+    proxy.ssl_proxy = proxy_add
+    proxy.no_proxy = None
+    proxy.proxy_type = ProxyType.MANUAL
+    proxy.auto_detect = False
+
+    capabilities = webdriver.DesiredCapabilities.CHROME
+    proxy.add_to_capabilities(capabilities)
+
     # Run the web driver
-    driver = webdriver.Chrome(executable_path="C:\\Users\\Chun Yu\\Downloads\\chromedriver.exe", options=options)
+    driver = webdriver.Chrome(executable_path="C:\\Users\\Chun Yu\\Downloads\\chromedriver.exe",
+                              options=options,
+                              desired_capabilities=capabilities)
     driver.get(url)
     return driver
 
@@ -118,8 +134,8 @@ def get_price(dirty_text):
 
 if __name__ == '__main__':
     chrome_driver = launch_chrome()
-    get_search_page(chrome_driver)
-    get_html(chrome_driver)
+    # get_search_page(chrome_driver)
+    # get_html(chrome_driver)
 
 
 
