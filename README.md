@@ -1,6 +1,28 @@
-# Expedia Flight Info Web Scraper
+# Expedia Flight Info Scraper (Work in Progress)
 
-First time trying to scrape information using a python script!
+## Scrape Expedia for cheapest price and time
+### Currently gets the departure list with airline names and prices
 
-Unfortunately had to stop because of Captcha. However, objective achieved because what I have in the repo managed to scrape and print out airline name and price in the departure section. 
+## Setup virtual environment on Windows
+Run the following
+```console
+# Create a virtual environment folder
+python -m venv <project name here>
+
+# Activate virtual environment
+<full path to project directory here/Scripts/activate.bat
+
+# Install dependencies
+python install -r requirements.txt
+
+# To deactivate virtual environment
+deactivate
+```
+
+## TODO(s):
+* Get pass captcha
+* Use a headless driver
+* Use different proxies everytime we launch the script
+
+
 
