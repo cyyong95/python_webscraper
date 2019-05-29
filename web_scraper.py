@@ -21,7 +21,7 @@ def launch_chrome():
     user_agent = ua.random
     options.add_argument(f'user-agent={user_agent}')
 
-    # Add proxy
+    # Add proxy (change to different proxy every time we scrape)
     proxy_add = "66.205.179.219:80"
     proxy = Proxy()
     proxy.http_proxy = proxy_add
@@ -30,12 +30,11 @@ def launch_chrome():
     proxy.no_proxy = None
     proxy.proxy_type = ProxyType.MANUAL
     proxy.auto_detect = False
-
     capabilities = webdriver.DesiredCapabilities.CHROME
     proxy.add_to_capabilities(capabilities)
 
     # Run the web driver
-    driver = webdriver.Chrome(executable_path="C:\\Users\\Chun Yu\\Downloads\\chromedriver.exe",
+    driver = webdriver.Chrome(executable_path="C:\\Users\\Chun Yu\\Desktop\\chromedriver.exe",
                               options=options,
                               desired_capabilities=capabilities)
     driver.get(url)
@@ -43,7 +42,7 @@ def launch_chrome():
 
 
 def get_search_page(chrome):
-
+    # Set departure and return date
     depart_date = r'14/06/2019'
     return_date = r'15/06/2019'
 
@@ -68,7 +67,7 @@ def get_search_page(chrome):
     depart_date_input.send_keys(f'{depart_date}')
     time.sleep(1)
 
-    # Input arrival date
+    # Input return date
     return_date_input = chrome.find_element_by_id("returnDateInput1")
     return_date_input.clear()
     return_date_input.send_keys(f'{return_date}')
