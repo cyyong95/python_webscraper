@@ -1,7 +1,7 @@
 # Expedia Flight Info Scraper (Work in Progress)
 
 ## Scrape Expedia for cheapest price and time
-### Currently gets the departure list with airline names and prices
+Currently gets the departure list with airline names and prices
 
 ## Setup virtual environment on Windows
 Run the following
