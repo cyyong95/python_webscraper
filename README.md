@@ -10,7 +10,7 @@ Run the following
 python -m venv <project name here>
 
 # Activate virtual environment
-<full path to project directory here/Scripts/activate.bat
+<full path to project directory here>/Scripts/activate.bat
 
 # Install dependencies
 python install -r requirements.txt
@@ -23,7 +23,3 @@ deactivate
 * Get pass captcha
 * Use a headless driver
 * Use different proxies everytime we launch the script
-
-
-
-I will have to continue reading on how to avoid detection. 
