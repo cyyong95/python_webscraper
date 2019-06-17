@@ -1,10 +1,10 @@
 # Expedia Flight Info Scraper (Work in Progress)
 
 ## Scrape Expedia for cheapest price and time
-Currently gets the departure list with airline names and prices
+Get the departure flight name and price
 
 ## Setup virtual environment on Windows
-Run the following
+Run the following to install dependencies
 ```console
 # Create a virtual environment folder
 python -m venv <project name here>
@@ -20,6 +20,4 @@ deactivate
 ```
 
 ## TODO(s):
-* Get pass captcha
-* Use a headless driver
-* Use different proxies everytime we launch the script
+* Use different proxies every time we launch the script
