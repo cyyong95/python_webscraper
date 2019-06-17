@@ -1,4 +1,4 @@
-# Expedia Flight Info Scraper (Work in Progress)
+# Expedia Flight Info Scraper
 
 ## Scrape Expedia for cheapest price and time
 Get the departure flight name and price
