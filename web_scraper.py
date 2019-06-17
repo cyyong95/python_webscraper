@@ -8,15 +8,14 @@ from bs4 import BeautifulSoup
 
 def launch_chrome():
     # Any url with the wrong search parameter will redirect you to a new search page
-    url = r"https://www.expedia.com/Flights-Search?starDate=08/30/2019&endDate=09/30/2019&mode=search&trip=roundtrip&" \
-          r"leg1=from:KUL,to:SIN,departure:08/03/2019TANYT&leg2=from:SIN,to:KULdeparture:09/03/2019TANYT&" \
+    url = r"https://www.expedia.com.my/Flights-Search?starDate=30/08/2019&endDate=30/09/2019&mode=search&trip=" \
+          r"roundtrip&leg1=from:KUL,to:SIN,departure:30/08/2019TANYT&leg2=from:SIN,to:KULdeparture:30/09/2019TANYT&" \
           r"passengers=children:0,adults:1,seniors:0,infantinlap:Y&mode=search&origref=www.expedia.com"
 
     # Add proxy
-    proxy = r"134.209.99.127:8080"
+    proxy = r"182.253.115.66:53826"
     options = Options()
     options.add_argument('--proxy-server=%s' % proxy)
-    options.add_argument('--headless')
 
     # Run the web driver
     driver = webdriver.Chrome(options=options)
@@ -35,6 +34,8 @@ def get_departure_price(chrome):
 
     html = chrome.execute_script("return document.documentElement.outerHTML")
     soup = BeautifulSoup(html, 'html.parser')
+
+    print("Processing data")
 
     # Get airline price
     for price in soup.find_all('span', {'data-test-id': 'listing-price-dollars'}):
