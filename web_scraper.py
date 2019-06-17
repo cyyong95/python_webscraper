@@ -16,6 +16,7 @@ def launch_chrome():
     proxy = r"134.209.99.127:8080"
     options = Options()
     options.add_argument('--proxy-server=%s' % proxy)
+    options.add_argument('--headless')
 
     # Run the web driver
     driver = webdriver.Chrome(options=options)
